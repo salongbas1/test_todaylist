@@ -13,7 +13,7 @@ function home ({ navigation }) {
     return (
         <View style= {globalStyles.container}>
 
-            <Modal visible={modalOpen} >
+            <Modal visible={modalOpen} animationType={'slide'}>
                 <View style={StyleSheet.modalContent}>
                     <Icon 
                         name="close" 
