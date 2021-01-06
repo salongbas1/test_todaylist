@@ -21,7 +21,7 @@ function home ({ navigation }) {
                         style={globalStyles.modalToggle}
                         onPress={() => setModalOpen(false)}
                     />
-                    <Text>dddd</Text>
+                    <Text>dddddddd</Text>
                 </View>
             </Modal>
 
