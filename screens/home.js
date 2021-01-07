@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { StyleSheet,Modal,Button, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import {globalStyles} from '../styles/global'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ReviewForm from './reviewForm'
+
 
 function home ({ navigation }) {
 
@@ -10,18 +12,26 @@ function home ({ navigation }) {
         {Event: 'Event A',time: '13.00-13.30', detail: 'LLLLL', key: 1}
     ])
 
+    const addReview = (review) => {
+        review.key = Math.random().toString()
+        setReviews((currentReviews) => {
+            return [review, ...currentReviews]
+        })
+        setModalOpen(false)
+    }
+
     return (
         <View style= {globalStyles.container}>
 
             <Modal visible={modalOpen} animationType={'slide'}>
-                <View style={StyleSheet.modalContent}>
+                <View style={globalStyles.modalContent}>
                     <Icon 
                         name="close" 
                         size={24} 
                         style={globalStyles.modalToggle}
                         onPress={() => setModalOpen(false)}
                     />
-                    <Text>dddddddd</Text>
+                    <ReviewForm addReview={addReview}/>
                 </View>
             </Modal>
 

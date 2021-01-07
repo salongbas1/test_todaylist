@@ -21,6 +21,16 @@ export const globalStyles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         alignSelf: 'center'
+    },
+    input: {
+        borderColor: '#ddd',
+        borderWidth: 1,
+        padding: 10,
+        fontSize: 18,
+        borderRadius: 6
+    },
+    modalContent: {
+        flex: 1
     }
 })
 
